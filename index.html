@@ -7,25 +7,24 @@
   <link rel="stylesheet" href="./currency-converter/style.css" />
 </head>
 <body>
-  <div class="background"></div>
-  <div class="card glass">
-    <h2>💱 Currency Converter</h2>
-
-    <div class="input-group">
-      <input type="number" id="amount" placeholder="Enter amount" />
+  <div class="container">
+    <div class="card">
+      <h2>💱 Currency Converter</h2>
+      <!-- Currency Converter Section -->
+      <div id="converter-section">
+        <div class="input-group">
+          <input type="number" id="amount" placeholder="Enter amount" />
+        </div>
+        <div class="selectors">
+          <select id="from-currency"></select>
+          <span class="arrow">⇄</span>
+          <select id="to-currency"></select>
+        </div>
+        <button onclick="convertCurrency()">Convert</button>
+        <div id="result"></div>
+      </div>
     </div>
-
-    <div class="selectors">
-      <select id="from-currency"></select>
-      <span class="arrow">⇄</span>
-      <select id="to-currency"></select>
-    </div>
-
-    <button onclick="convertCurrency()">Convert</button>
-
-    <div id="result" class="fade-in"></div>
   </div>
-
   <script src="./currency-converter/script.js"></script>
 </body>
 </html>

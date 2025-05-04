@@ -1,5 +1,4 @@
 const api_url = "https://api.exchangerate-api.com/v4/latest/USD";
-
 const fromCurrency = document.getElementById("from-currency");
 const toCurrency = document.getElementById("to-currency");
 const resultDiv = document.getElementById("result");
@@ -41,8 +40,5 @@ function convertCurrency() {
   }
 
   const converted = (amount / rates[from]) * rates[to];
-  resultDiv.classList.remove("fade-in");
-  void resultDiv.offsetWidth; // Re-trigger animation
-  resultDiv.classList.add("fade-in");
   resultDiv.textContent = `${amount} ${from} = ${converted.toFixed(2)} ${to}`;
 }
