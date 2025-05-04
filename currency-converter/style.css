@@ -4,14 +4,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
 }
 
 body, html {
   height: 100%;
   background: #1d2b64;
-  background: linear-gradient(to right, #f8cdda, #1d2b64);
+  background: linear-gradient(to right, #a18cd1, #fbc2eb);
   overflow: hidden;
+  font-family: 'Poppins', sans-serif;
 }
 
 .background {
@@ -20,9 +20,11 @@ body, html {
   height: 100%;
   background-image: url('images/bg-image.jpg');
   background-size: cover;
-  opacity: 0.2;
+  background-position: center;
+  opacity: 0.3;
   z-index: -1;
 }
+
 
 .container {
   display: flex;
@@ -41,10 +43,40 @@ body, html {
   border: 1px solid rgba(255, 255, 255, 0.18);
   color: #fff;
   text-align: center;
+  animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 h2 {
   margin-bottom: 20px;
+}
+
+.logo {
+  width: 100px;
+  margin-bottom: 20px;
+  animation: rotateLogo 3s infinite;
+}
+
+@keyframes rotateLogo {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .input-group input {
@@ -54,6 +86,16 @@ h2 {
   border-radius: 10px;
   outline: none;
   font-size: 16px;
+  animation: fadeInInput 1s ease;
+}
+
+@keyframes fadeInInput {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .selectors {
@@ -85,6 +127,16 @@ button {
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s;
   margin-top: 10px;
+  animation: fadeInButton 1.5s ease;
+}
+
+@keyframes fadeInButton {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 button:hover {
@@ -97,4 +149,15 @@ button:hover {
   font-size: 20px;
   color: #fff;
   min-height: 30px;
+  opacity: 0;
+  animation: fadeInResult 1s forwards;
+}
+
+@keyframes fadeInResult {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
